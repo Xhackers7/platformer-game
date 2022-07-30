@@ -3,11 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include "Engine/Game.hpp"
 #include "Engine/Collider.hpp"
+#include "Components/Block.hpp"
+#include "Components/Entity.hpp"
 
 class StartScene : public Engine::Scene
 {
 private:
-    std::shared_ptr<Engine::Context> m_context;
+    std::shared_ptr<Engine::Context> currentContext;
 public:
     StartScene(std::shared_ptr<Engine::Context>& context);
     ~StartScene();
@@ -17,9 +19,6 @@ public:
     void update(float deltaTime) override;
     void draw() override;
 private:
-    sf::RectangleShape player;
-    sf::RectangleShape other;
-
-    Engine::Collider playerCollider;
-    Engine::Collider otherCollider;
+    Block blocks[6];
+    Entity test;
 };

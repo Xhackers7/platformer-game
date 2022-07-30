@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -pedantic -g3 -Og")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -DNDEBUG")
 
-
 set(SFML_INCLUDE_DIR "./deps/SFML/include")
 set(SFML_LIBRARY_DIR "./deps/SFML/lib")
 set(SFML_DIR "./deps/SFML/lib/cmake/SFML")
