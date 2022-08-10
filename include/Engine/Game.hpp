@@ -25,7 +25,7 @@ namespace Engine
     {
     private:
         std::shared_ptr<Context> m_context;
-        sf::Time m_deltaTime;
+        unsigned int m_fps;
 
     public:
         Game(unsigned int fps);
