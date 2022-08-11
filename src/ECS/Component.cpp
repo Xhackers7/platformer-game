@@ -1,7 +1,8 @@
 #include "ECS/Component.hpp"
 
-uint32_t BaseComponent::nextID()
+uint32_t BaseComponent::registerNewComponent(createComponentFunction createFn, deleteComponentFunction deleteFn, size_t size)
 {
-  static uint32_t id = 0;
-  return id++;
+  uint32_t id = componentTypes.size();
+  componentTypes.push_back(std::tuple<createComponentFunction, deleteComponentFunction, size_t>(createFn, deleteFn, size));
+  return id;
 }
