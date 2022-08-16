@@ -3,10 +3,8 @@
 #include <stack>
 #include <memory>
 
-#include "Engine/Scene.hpp"
+#include "core/Scene.hpp"
 
-namespace Engine
-{
 
     class SceneManager
     {
@@ -27,4 +25,3 @@ namespace Engine
         void processSceneChange();
         std::unique_ptr<Scene> &getCurrent();
     };
-}

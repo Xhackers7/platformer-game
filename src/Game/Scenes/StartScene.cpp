@@ -1,7 +1,7 @@
 #include "StartScene.hpp"
 #include "nextScene.hpp"
 
-StartScene::StartScene(std::shared_ptr<Engine::Context> &context) : m_context(context), playerCollider(player), otherCollider(other)
+StartScene::StartScene(std::shared_ptr<Context> &context) : context(context)
 {
 }
 
@@ -25,12 +25,12 @@ void StartScene::init()
 void StartScene::handleInputs()
 {
   sf::Event event;
-  while (m_context->m_window->pollEvent(event))
+  while (context->window->pollEvent(event))
   {
     switch (event.type)
     {
     case sf::Event::Closed:
-      m_context->m_window->close();
+      context->window->close();
       break;
 
     case sf::Event::MouseMoved:
@@ -41,7 +41,7 @@ void StartScene::handleInputs()
       switch (event.key.code)
       {
       case sf::Keyboard::S:
-        m_context->m_sceneManager->addScene(std::make_unique<nextScene>(m_context), true);
+        context->sceneManager->addScene(std::make_unique<nextScene>(context), true);
         break;
 
       default:
@@ -54,11 +54,11 @@ void StartScene::handleInputs()
 }
 void StartScene::update(float deltaTime)
 {
-  playerCollider.handleCollision(other, 0.5);
+  
 }
 
 void StartScene::draw()
 {
-  m_context->m_window->draw(player);
-  m_context->m_window->draw(other);
+  context->window->draw(player);
+  context->window->draw(other);
 }

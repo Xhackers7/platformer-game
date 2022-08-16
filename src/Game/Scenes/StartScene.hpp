@@ -1,15 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Engine/Game.hpp"
-#include "Engine/Collider.hpp"
+#include "Game/Game.hpp"
 
-class StartScene : public Engine::Scene
+class StartScene : public Scene
 {
 private:
-    std::shared_ptr<Engine::Context> m_context;
+    std::shared_ptr<Context> context;
 public:
-    StartScene(std::shared_ptr<Engine::Context>& context);
+    StartScene(std::shared_ptr<Context>& context);
     ~StartScene();
 
     void init() override;
@@ -20,6 +19,5 @@ private:
     sf::RectangleShape player;
     sf::RectangleShape other;
 
-    Engine::Collider playerCollider;
-    Engine::Collider otherCollider;
+    
 };

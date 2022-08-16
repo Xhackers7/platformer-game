@@ -1,15 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Engine/Game.hpp"
-#include "Engine/Collider.hpp"
+#include "Game/Game.hpp"
 
-class nextScene : public Engine::Scene {
+class nextScene : public Scene {
 private:
-    std::shared_ptr<Engine::Context> m_context;
+    std::shared_ptr<Context> context;
 
 public:
-    nextScene(std::shared_ptr<Engine::Context> &context);
+    nextScene(std::shared_ptr<Context> &context);
     ~nextScene();
     void init() override;
     void handleInputs() override;

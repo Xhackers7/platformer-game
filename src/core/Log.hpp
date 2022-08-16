@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-namespace Engine
-{
+
     class Log
     {
     public:
@@ -25,4 +24,3 @@ namespace Engine
         static void warn(const char *msg);
         static void error(const char *msg, int statusCode);
     };
-}

@@ -1,10 +1,10 @@
-#include "Engine/Game.hpp"
-#include "Engine/Log.hpp"
+#include "core/Log.hpp"
+#include "Game/Game.hpp"
 
 int main()
 {
-   Engine::Log::setLevel(Engine::Log::logInfo);
-   Engine::Game game(60);
+   Log::setLevel(Log::logInfo);
+   Game game(60);
 
    game.run();
 }
