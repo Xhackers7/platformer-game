@@ -5,9 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -pedantic -g3 -Og")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -DNDEBUG")
 
-set(SFML_INCLUDE_DIR "./deps/SFML/include")
-set(SFML_LIBRARY_DIR "./deps/SFML/lib")
-set(SFML_DIR "./deps/SFML/lib/cmake/SFML")
+set(SFML_INCLUDE_DIR "./libs/SFML/include")
+set(SFML_LIBRARY_DIR "./libs/SFML/lib")
+set(SFML_DIR "./libs/SFML/lib/cmake/SFML")
 
 link_directories(SFML_LIBRARY_DIR)
 include_directories(SFML_INCLUDE_DIR)
@@ -23,7 +23,7 @@ endif()
 include(CTest)
 enable_testing()
 
-include_directories(include)
+include_directories(src)
 
 file( GLOB_RECURSE SRC src/*.cpp )
 add_executable(${PROJECT_NAME} ${SRC})

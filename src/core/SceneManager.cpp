@@ -1,28 +1,28 @@
-#include "Engine/SceneManager.hpp"
-#include "Engine/Log.hpp"
+#include "core/SceneManager.hpp"
+#include "core/Log.hpp"
 
-Engine::SceneManager::SceneManager()
+SceneManager::SceneManager()
 {
   m_replace = false;
   m_remove = false;
 }
 
-Engine::SceneManager::~SceneManager()
+SceneManager::~SceneManager()
 {
 }
 
-void Engine::SceneManager::addScene(std::unique_ptr<Scene> scene, bool replace = false)
+void SceneManager::addScene(std::unique_ptr<Scene> scene, bool replace = false)
 {
   m_newScene = std::move(scene);
   m_replace = replace;
 }
 
-void Engine::SceneManager::pop()
+void SceneManager::pop()
 {
   m_remove = true;
 }
 
-void Engine::SceneManager::processSceneChange()
+void SceneManager::processSceneChange()
 {
   if (m_remove && !m_sceneStack.empty())
   {
@@ -52,7 +52,7 @@ void Engine::SceneManager::processSceneChange()
   }
 }
 
-std::unique_ptr<Engine::Scene> &Engine::SceneManager::getCurrent()
+std::unique_ptr<Scene> &SceneManager::getCurrent()
 {
   return m_sceneStack.top();
 }

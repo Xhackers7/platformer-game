@@ -1,13 +1,13 @@
-#include "Engine/Log.hpp"
+#include "core/Log.hpp"
 
-Engine::Log::Level Engine::Log::m_currentLevel;
+Log::Level Log::m_currentLevel;
 
-void Engine::Log::setLevel(Level logLevel)
+void Log::setLevel(Level logLevel)
 {
   m_currentLevel = logLevel;
 }
 
-void Engine::Log::info(const char *msg)
+void Log::info(const char *msg)
 {
   if (m_currentLevel > Level::logInfo)
     return;
@@ -15,7 +15,7 @@ void Engine::Log::info(const char *msg)
             << "[Info]: " << msg << "\033[37m \n";
 }
 
-void Engine::Log::warn(const char *msg)
+void Log::warn(const char *msg)
 {
   if (m_currentLevel > Level::logWarn)
     return;
@@ -23,7 +23,7 @@ void Engine::Log::warn(const char *msg)
             << "[Warning]: " << msg << "\033[37m \n";
 }
 
-void Engine::Log::error(const char *msg, int statusCode)
+void Log::error(const char *msg, int statusCode)
 {
   if (m_currentLevel > Level::logError)
     return;

@@ -1,15 +1,23 @@
+<<<<<<< HEAD:src/Engine/Collider.cpp
 #include "Engine/Collider.hpp"
 #include "Engine/Log.hpp"
+=======
+#include "backup/Collider.hpp"
+>>>>>>> ecs:backup/Collider.cpp
 
-Engine::Collider::Collider(sf::RectangleShape &shape) : body(shape)
+Collider::Collider(sf::RectangleShape &shape) : body(shape)
 {
 }
 
-Engine::Collider::~Collider()
+Collider::~Collider()
 {
 }
 
+<<<<<<< HEAD:src/Engine/Collider.cpp
 bool Engine::Collider::handleCollision(sf::RectangleShape &other, float weight, float otherWeight, char &surface)
+=======
+bool Collider::handleCollision(sf::RectangleShape &other, float weight)
+>>>>>>> ecs:backup/Collider.cpp
 {
   float xIntersect, yIntersect, xDistance, yDistance;
 
@@ -59,7 +67,7 @@ bool Engine::Collider::handleCollision(sf::RectangleShape &other, float weight, 
   return true;
 }
 
-bool Engine::Collider::checkCollision(const sf::RectangleShape &other, float &xDistance, float &yDistance, float &xIntersect, float &yIntersect) const
+bool Collider::checkCollision(const sf::RectangleShape &other, float &xDistance, float &yDistance, float &xIntersect, float &yIntersect) const
 {
   sf::Vector2f otherPos = other.getPosition();
   sf::Vector2f otherHalfSize = sf::Vector2f(other.getSize().x / 2, other.getSize().y / 2);

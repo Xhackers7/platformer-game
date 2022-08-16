@@ -2,8 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace Engine
-{
+
   class Scene
   {
   public:
@@ -19,4 +18,4 @@ namespace Engine
     virtual void pause(){};
     virtual void start(){};
   };
-};
+;
